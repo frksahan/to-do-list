@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, KeyboardAvoidingView, StyleSheet, Text, View, TextInput } from 'react-native';
+import { TouchableOpacity, KeyboardAvoidingView, StyleSheet, Text, View, TextInput, ScrollView, TouchableHighlight } from 'react-native';
 import Task from './components/task';
 
 export default function App() {
@@ -20,20 +20,27 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Bugünün İşleri</Text>
-        <View style={styles.items}>
-          {
-            taskItems.map((item, index) => {
-              return (
-                <TouchableOpacity key={index} onPress={() => completeTask(index)}>
-                  <Task text={item} />
-                </TouchableOpacity>
-              )
-            })
-          }
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1
+        }}
+        keyboardShouldPersistTaps='handled'
+      >
+        <View style={styles.tasksWrapper}>
+          <Text style={styles.sectionTitle}>Bugünün İşleri</Text>
+          <View style={styles.items}>
+            {
+              taskItems.map((item, index) => {
+                return (
+                  <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                    <Task text={item} />
+                  </TouchableOpacity>
+                )
+              })
+            }
+          </View>
         </View>
-      </View>
+      </ScrollView>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeTaskWrapper}
@@ -53,30 +60,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: '#BA55D3',
   },
   tasksWrapper: {
-    paddingTop: 80,
+    paddingTop: 40,
     paddingHorizontal: 20,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 36,
     fontFamily: 'Roboto',
     fontWeight: 'bold',
+    alignSelf: 'center',
+    textTransform: 'uppercase',
   },
   items: {
     marginTop: 30,
   },
   writeTaskWrapper: {
     position: 'absolute',
-    bottom: 60,
+    bottom: 40,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   input: {
-    paddingVertical: 15,
+    paddingVertical: 10,
     paddingHorizontal: 15,
     backgroundColor: '#FFF',
     borderRadius: 60,
@@ -86,8 +95,8 @@ const styles = StyleSheet.create({
   },
   addWrapper: {
     backgroundColor: '#FFF',
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     borderRadius: 52,
     justifyContent: 'center',
     alignItems: 'center',
