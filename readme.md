@@ -1,0 +1,1 @@
+Ben artık React Native öğrenmeye başladım. Bu süreçte hızlı ve güzel bir yol kat edeceğime inanıyorum.
