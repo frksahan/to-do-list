@@ -11,10 +11,8 @@ export default function App() {
         <Text style={styles.sectionTitle}>Bugünün İşleri</Text>
 
         <View style={styles.items}>
-          <Task />
-          <Task />
-          <Task />
-          <Task />
+          <Task text={'Task 1'} />
+          <Task text={'Task 2'} />
         </View>
 
       </View>
@@ -37,5 +35,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     fontWeight: 'bold',
   },
-  items: {},
+  items: {
+    marginTop: 30,
+  },
 }); 
