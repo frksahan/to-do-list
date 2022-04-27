@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#BA55D3',
   },
   tasksWrapper: {
-    paddingTop: 40,
+    paddingTop: 30,
     paddingHorizontal: 20,
   },
   sectionTitle: {
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     textTransform: 'uppercase',
+    paddingTop: 10,
   },
   items: {
     marginTop: 30,
