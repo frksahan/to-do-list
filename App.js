@@ -10,6 +10,13 @@ export default function App() {
     setTaskItems([...taskItems, task])
     setTask(null);
   }
+
+  const completeTask = (index) => {
+    let itemsCopy = [...taskItems];
+    itemsCopy.splice(index, 1);
+    setTaskItems(itemsCopy);
+  }
+
   return (
     <View style={styles.container}>
 
