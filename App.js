@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   items: {
-    marginTop: 30,
+    marginTop: 15,
   },
   writeTaskWrapper: {
     position: 'absolute',
@@ -88,20 +88,20 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 10,
     paddingHorizontal: 15,
-    backgroundColor: '#FFF',
+    backgroundColor: '#D2B48C',
     borderRadius: 60,
-    borderColor: '#C0C0C0',
+    borderColor: '#000',
     borderWidth: 1,
     width: 250,
   },
   addWrapper: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#D2B48C',
     width: 50,
     height: 50,
     borderRadius: 52,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: '#C0C0C0',
+    borderColor: '#000',
     borderWidth: 1,
 
   },
